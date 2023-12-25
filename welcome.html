@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            cursor:pointer;
+        }
+
+        .background {
+            position: absolute;
+            background: url("images/welcome-bg.png") no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .base {
+            position: relative;
+            text-align: center;
+            font-weight: bolder;
+            color: #E6A23C;
+        }
+
+        .title {
+            top: 20%;
+            font-size: 13em;
+            letter-spacing: 10px;
+        }
+
+        .class-name {
+            top: 20%;
+            font-size: 3em;
+            letter-spacing: 10px;
+        }
+
+        .subtitle {
+            top: 20%;
+            font-size: 4em;
+            letter-spacing: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="main background" onclick="window.open('./red-package.html')">
+    <div class="base title"></div>
+    <div class="base class-name"></div>
+    <div class="base subtitle"><span class="name"></span>送福利啦~</div>
+</div>
+</body>
+<script src="./jquery-2.1.1.min.js"></script>
+<script src="./config.js"></script>
+<script>
+    $(function () {
+        $('.title').html(config.title)
+        $('.class-name').html(config.className)
+        $('.class-name').html(config.className)
+        $('.name').html(config.name)
+    })
+</script>
+</html>

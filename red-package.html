@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>red-package</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            word-break: break-all;
+            width: 82%;
+            height: 70%;
+            position: absolute;
+            top: 15%;
+            left: 9%;
+        }
+
+        .red-package {
+            width: 24%;
+            height: 80%;
+            border-radius: 10px;
+            background-color: rgb(255, 68, 53);
+            overflow: hidden;
+            margin: auto;
+            position: relative;
+            display: inline-block;
+            float: left;
+        }
+
+        /*圆弧*/
+        .circle {
+            border-radius: 50%;
+            height: 170%;
+            width: 270%;
+            background-color: rgb(255, 79, 66);
+            position: absolute;
+            border: 2px solid rgb(237, 61, 49);
+            top: -100%;
+            left: -86%;
+        }
+
+        /*打开红包的圆弧*/
+        .opened-circle {
+            border-radius: 50%;
+            height: 170%;
+            width: 270%;
+            background-color: rgb(255, 68, 53);
+            position: absolute;
+            border: 2px solid rgb(247, 201, 103);
+            top: -163%;
+            left: -86%;
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 6%;
+            position: relative;
+            top: 25%;
+
+            font-weight: bold;
+            font-size: 1.1em;
+            color: rgb(254, 199, 155);
+            letter-spacing: 1px;
+        }
+
+        .opened-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 6%;
+            position: relative;
+            top: 25%;
+            font-weight: bold;
+            font-size: 1.1em;
+            color: rgb(65, 65, 65);
+            letter-spacing: 1px;
+        }
+
+        /*头像*/
+        .head {
+            position: relative;
+            width: 10%;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        /*名称*/
+        .name {
+            height: 100%;
+            width: auto;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: rgb(254, 199, 155);
+            letter-spacing: 1px;
+            display: inline-block;
+            text-indent: 10%;
+        }
+
+        /*名称*/
+        .opened-name {
+            position: relative;
+            height: 25px;
+            width: 209px;
+            font-weight: bold;
+            font-size: 17px;
+            color: rgb(65, 65, 65);
+            letter-spacing: 1px;
+        }
+
+        /*附言*/
+        .postscript {
+            position: relative;
+            width: 100%;
+            font-weight: bold;
+            font-size: 1.4em;
+            color: rgb(254, 199, 155);
+            letter-spacing: 1px;
+            text-align: center;
+            top: 28%;
+        }
+
+        /*附言*/
+        .opened-postscript {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9em;
+            color: rgb(193, 193, 193);
+            letter-spacing: 1px;
+            top: 28%;
+        }
+
+        /*開*/
+        .open {
+            border: 0;
+            height: 97px;
+            width: 97px;
+            border-radius: 50%;
+            background-color: rgb(241, 204, 146);
+            line-height: 17%;
+            text-align: center;
+            font-size: 2.1em;
+            font-weight: bold;
+            color: rgb(71, 68, 63);
+            position: relative;
+            top: 48%;
+            left: calc(50% - 49px);
+            cursor: pointer;
+        }
+
+        .open-text {
+            position: relative;
+            top: 46%;
+        }
+
+        .mini {
+            position: absolute;
+            height: 18px;
+            width: 25px;
+            top: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .award {
+            position: absolute;
+            height: 40%;
+            width: 100%;
+            font-size: 1.3em;
+            color: rgb(214, 170, 107);
+            font-weight: bold;
+            text-align: center;
+            top: 50%;
+        }
+
+        /*****************************************/
+        .box-10 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            word-break: break-all;
+            width: 80%;
+            height: 39%;
+            position: absolute;
+        }
+
+        .box-10-1 {
+            top: 10%;
+            left: 9%;
+        }
+
+        .box-10-2 {
+            top: 51%;
+            left: 9%;
+        }
+
+        .red-package-10 {
+            width: 16%;
+        }
+
+        /*打开红包的圆弧*/
+        .opened-circle-10 {
+            top: -164%;
+        }
+
+        .info-10 {
+            height: 7%;
+            font-size: 1em;
+        }
+
+        /*名称*/
+        .name-10 {
+            font-size: 0.9em;
+        }
+
+        .opened-name-10 {
+            font-size: 0.9em;
+        }
+
+        .postscript-10 {
+            font-size: 1em;
+            top: 30%;
+        }
+
+        .open-10 {
+            height: 70px;
+            width: 70px;
+            font-size: 1.6em;
+            top: 43%;
+            left: calc(50% - 35px);
+        }
+
+        .award-10 {
+            font-size: 1em;
+        }
+
+        .shake {
+            animation: shake 800ms ease-in-out;
+        }
+
+        /* 垂直抖动，核心代码 */
+        @keyframes shake {
+            10%, 90% {
+                transform: translate3d(0, -1px, 0);
+            }
+            20%, 80% {
+                transform: translate3d(0, +2px, 0);
+            }
+            30%, 70% {
+                transform: translate3d(0, -4px, 0);
+            }
+            40%, 60% {
+                transform: translate3d(0, +4px, 0);
+            }
+            50% {
+                transform: translate3d(0, -4px, 0);
+            }
+        }
+
+        .operate {
+            height: 2%;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 7%;
+        }
+
+        .background {
+            position: absolute;
+            background: url("images/redpackage-bg.png") no-repeat;
+            background-size: 100% 100%;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="main background">
+</div>
+<div class="operate">
+    <select id="packageNumber">
+        <option value="1">1 个</option>
+        <option value="2">2 个</option>
+        <option value="3">3 个</option>
+        <option value="4" selected>4 个</option>
+        <option value="6">6 个</option>
+        <option value="8">8 个</option>
+        <option value="10">10 个</option>
+    </select>
+    <button type="button" onclick="generate()">发红包</button>
+</div>
+</body>
+<script src="./jquery-2.1.1.min.js"></script>
+<script src="./config.js"></script>
+<script>
+
+    let awards = []
+    let sum = 0
+    $(function () {
+        config.awards.forEach(i => {
+            awards.push({start: sum, end: sum += i.weight, name: i.name})
+        })
+        console.log(awards)
+        generate()
+    })
+
+
+    function generate() {
+        let packageNumber = $("#packageNumber").val()
+        let type = packageNumber <= 4 ? 4 : 10;
+        let main = $(".main");
+
+        main.empty()
+
+        let content = ""
+        content += "<div class=\"box box-" + type + "\">"
+        for (let i = 0; i < packageNumber; i++) {
+
+            if (packageNumber > 4 && i === packageNumber / 2) {
+                content += "</div>"
+                content += "<div class=\"box box-10 box-10-2\">"
+            }
+
+            content += "<div class=\"red-package red-package-" + type + "\">\n" +
+                "            <div class=\"circle circle-" + type + "\"></div>\n" +
+                "            <div class=\"info info-" + type + "\">\n" +
+                "               <img src=\"images/head.png\" class=\"head head-" + type + "\">\n" +
+                "               &nbsp;&nbsp;" + config.name + "的红包" +
+                "            </div>\n" +
+                "            <div class=\"postscript postscript-" + type + "\">好好学习，天天向上</div>\n" +
+                "            <div id=\"shake-" + type + "-" + i + "\" class=\"open open-" + type + "\" onclick=\"shake(this.id)\">" +
+                "               <div class=\"open-text\">開</div>" +
+                "            </div>\n" +
+                "            <img src=\"images/mini.png\" class=\"mini mini-" + type + "\">\n" +
+                "        </div>";
+        }
+        content += "</div>"
+
+        main.html(content)
+
+        $("[class='box box-10']").addClass('box-10-1')
+
+    }
+
+
+    function shake(elementId) {
+        let element = $("#" + elementId);
+        if (element) {
+            element.addClass('shake')
+            setTimeout(() => {
+                element.removeClass('shake')
+                open(elementId)
+            }, 800)
+        }
+    }
+
+
+    function open(elementId) {
+        let type = elementId.split('-')[1];
+        let redPackage = $("#" + elementId).parent();
+
+        redPackage
+            .css('background-color', 'rgb(255,255,255)')
+            .css('border', '1px black solid')
+
+        redPackage.children('.circle')
+            .removeClass('circle-' + type)
+            .addClass('opened-circle')
+            .addClass('opened-circle-' + type)
+
+        redPackage.children('.info')
+            .removeClass('info')
+            .addClass('opened-info')
+
+        redPackage.children('.name')
+            .removeClass('name-' + type)
+            .addClass('opened-name-' + type)
+
+        redPackage.children('.postscript')
+            .removeClass('postscript-' + type)
+            .addClass('opened-postscript')
+            .addClass('opened-postscript-' + type)
+
+        redPackage.children('.open').remove()
+
+        redPackage.children('.mini').remove()
+
+        redPackage.append('<div class="award award-' + type + '">' + award() + '</div>');
+
+
+    }
+
+    function award() {
+        let random = this.random(0, sum - 1);
+        let award = awards.find(i => i.start <= random && i.end > random);
+        console.log("random:" + random + ",award:" + award.name)
+        return award.name
+    }
+
+    function random(min, max) {
+        return parseInt((max - min + 1) * Math.random() + min);
+    }
+</script>
+</html>
